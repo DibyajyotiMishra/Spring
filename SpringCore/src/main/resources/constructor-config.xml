@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context
+                http://www.springframework.org/context/spring-context.xsd">
+
+    <bean class="com.springcore.constructorinjection.Certificate" name="certificate" c:name="AWS Cloud Associate" />
+
+    <bean class="com.springcore.constructorinjection.Person" name="person">
+        <constructor-arg value="1" type="int" />
+        <constructor-arg>
+            <value>Dibyajyoti</value>
+        </constructor-arg>
+        <constructor-arg ref="certificate" />
+        <constructor-arg>
+            <list>
+                <value>7675852414</value>
+                <value>9676975489</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+
+    <bean class="com.springcore.constructorinjection.Add" name="add">
+        <constructor-arg value="12" index="1" type="int" />
+        <constructor-arg value="17" index="0" type="int" />
+    </bean>
+</beans>
