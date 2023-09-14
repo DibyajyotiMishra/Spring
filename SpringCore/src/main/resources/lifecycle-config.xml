@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context
+                http://www.springframework.org/context/spring-context.xsd">
+
+<!--    to enable all bean annotations-->
+    <context:annotation-config />
+
+<!--    <bean class="com.springcore.lifecycle.Food" name="food" init-method="init" destroy-method="destroy">-->
+<!--        <property name="price" value="10" />-->
+<!--    </bean>-->
+
+<!--    <bean class="com.springcore.lifecycle.Animal" name="animal">-->
+<!--        <property name="name" value="German Shepherd" />-->
+<!--    </bean>-->
+
+
+
+    <bean class="com.springcore.lifecycle.Language" name="lang">
+        <property name="name" value="Java" />
+    </bean>
+
+<!--    for single config-->
+<!--    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />-->
+</beans>
