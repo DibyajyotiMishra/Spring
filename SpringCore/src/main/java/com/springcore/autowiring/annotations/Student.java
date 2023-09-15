@@ -1,12 +1,13 @@
 package com.springcore.autowiring.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Student {
-
+    @Autowired
+    @Qualifier("subject2")
     private Subject subject;
 
-    @Autowired
     public Student(Subject subject) {
         this.subject = subject;
     }

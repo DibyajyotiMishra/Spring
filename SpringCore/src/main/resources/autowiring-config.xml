@@ -14,7 +14,9 @@
 
     <bean class="com.springcore.autowiring.Employee" name="employee" autowire="byType" />
 
-    <bean class="com.springcore.autowiring.annotations.Subject" name="subject" p:subjectId="1234" p:subjectName="Java" />
+    <bean class="com.springcore.autowiring.annotations.Subject" name="subject1" p:subjectId="1234" p:subjectName="Java" />
+
+    <bean class="com.springcore.autowiring.annotations.Subject" name="subject2" p:subjectId="8713" p:subjectName="Python" />
 
     <bean class="com.springcore.autowiring.annotations.Student" name="student" />
 
