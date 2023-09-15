@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context
+                http://www.springframework.org/context/spring-context.xsd">
+
+    <context:annotation-config />
+
+    <bean class="com.springcore.autowiring.Address" name="address1" p:street="Pramukh Nagar" p:city="Hyderabad" p:state="Telangana" p:pincode="502307" />
+
+    <bean class="com.springcore.autowiring.Employee" name="employee" autowire="byType" />
+
+    <bean class="com.springcore.autowiring.annotations.Subject" name="subject" p:subjectId="1234" p:subjectName="Java" />
+
+    <bean class="com.springcore.autowiring.annotations.Student" name="student" />
+
+</beans>
