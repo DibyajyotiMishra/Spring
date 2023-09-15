@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context
+                http://www.springframework.org/context/spring-context.xsd
+                http://www.springframework.org/schema/util
+                http://www.springframework.org/util/spring-util.xsd">
+
+    <util:list list-class="java.util.LinkedList" id="bff">
+        <value>Test1</value>
+        <value>Test2</value>
+        <value>Test3</value>
+        <value>Test4</value>
+    </util:list>
+
+    <util:map map-class="java.util.HashMap" id="phoneNumber">
+        <entry key="phone1" value="7675852414" />
+        <entry key="phone2" value="9676975489"   />
+    </util:map>
+
+    <util:properties id="dbConfig">
+        <prop key="driver">com.mysql.jdbc.Driver</prop>
+        <prop key="username">root</prop>
+        <prop key="password">password</prop>
+        <prop key="url">mysql:jdbc://localhost:3306/users</prop>
+    </util:properties>
+
+    <bean class="com.springcore.standalonecollections.Person" name="person">
+        <property name="friends" ref="bff" />
+        <property name="phone" ref="phoneNumber" />
+        <property name="properties" ref="dbConfig" />
+    </bean>
+</beans>
