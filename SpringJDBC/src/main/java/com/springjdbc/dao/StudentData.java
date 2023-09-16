@@ -2,28 +2,42 @@ package com.springjdbc.dao;
 
 import com.springjdbc.entities.Student;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+
+import java.util.List;
 
 public class StudentData implements StudentDao{
     private JdbcTemplate jdbcTemplate;
+    private final RowMapper<Student> rowMapper = new RowMapperImplementation();
     @Override
     public int insert(Student student) {
         String query = "insert into  student(id, name) values(?, ?)";
-        int result = this.jdbcTemplate.update(query, student.getId(), student.getName());
-        return result;
+        return this.jdbcTemplate.update(query, student.getId(), student.getName());
     }
 
     @Override
     public int update(Student student) {
         String query = "update student set name=? where id=?";
-        int result = this.jdbcTemplate.update(query, student.getName(), student.getId());
-        return result;
+        return this.jdbcTemplate.update(query, student.getName(), student.getId());
     }
 
     @Override
     public int delete(Student student) {
         String query = "delete from student where id=?";
-        int result = this.jdbcTemplate.update(query, student.getId());
-        return result;
+        return this.jdbcTemplate.update(query, student.getId());
+    }
+
+    @Override
+    public Student getStudent(int studentId) {
+        String query = "select * from student where id=?";
+        return this.jdbcTemplate.queryForObject(query, rowMapper, studentId);
+    }
+
+    @Override
+    public List<Student> getStudents() {
+        String query = "select * from student";
+
+        return this.jdbcTemplate.query(query, rowMapper);
     }
 
     public JdbcTemplate getJdbcTemplate() {

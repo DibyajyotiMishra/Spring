@@ -6,6 +6,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath*:config.xml");
@@ -26,8 +28,14 @@ public class Main {
         student.setId(1234);
         int deleteResult = studentDao.delete(student);
 
+        // read
+        Student studentData = studentDao.getStudent(1349);
+        List<Student> students = studentDao.getStudents();
+
         System.out.println("Rows Added/Updated: " + insertResult);
         System.out.println("Rows Added/Updated: " + updateResult);
         System.out.println("Rows Added/Updated: " + deleteResult);
+        System.out.println(studentData);
+        System.out.println(students);
     }
 }
