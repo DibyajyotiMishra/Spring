@@ -5,9 +5,6 @@ import com.springjdbc.entities.Student;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.jdbc.core.JdbcTemplate;
-
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {
