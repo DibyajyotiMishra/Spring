@@ -10,7 +10,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
-        StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
+        StudentDao studentDao = context.getBean("student", StudentDao.class);
         Student student = new Student();
 
         // insert

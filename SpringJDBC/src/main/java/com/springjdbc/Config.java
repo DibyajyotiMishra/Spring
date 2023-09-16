@@ -10,7 +10,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan(basePackages = "com.springjdbc")
+@ComponentScan(basePackages = {"com.springjdbc.dao"})
 public class Config {
     @Bean(name = {"database-config"})
     public DataSource getDataSource() {
