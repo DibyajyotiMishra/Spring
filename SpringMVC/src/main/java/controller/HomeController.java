@@ -3,6 +3,7 @@ package controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
@@ -17,5 +18,14 @@ public class HomeController {
     public String about() {
         System.out.println("This is about page");
         return "about";
+    }
+
+    @RequestMapping("/help")
+    public ModelAndView help() {
+        System.out.println("This is help page");
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("phone", "1234567890");
+        modelAndView.setViewName("help");
+        return modelAndView;
     }
 }
