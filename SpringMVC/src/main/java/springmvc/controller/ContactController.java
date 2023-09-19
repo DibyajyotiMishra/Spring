@@ -1,15 +1,20 @@
-package controller;
+package springmvc.controller;
 
-import model.Response;
+import springmvc.model.Response;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import springmvc.service.ResponseService;
 
 @Controller
 public class ContactController {
+
+    @Autowired
+    private ResponseService responseService;
 
     @ModelAttribute
     public void commons(Model model) {
@@ -26,6 +31,7 @@ public class ContactController {
             Model model
     ) {
         System.out.println(response);
+        this.responseService.save(response);
         return "success";
     }
 
