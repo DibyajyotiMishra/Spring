@@ -17,10 +17,9 @@
 
   <p>First Name: ${response.firstName}</p>
   <p>Last Name: ${response.lastName}</p>
-  <p>Message: ${response.message}</p>
 
   <div class="container text-center">
-    <a class="btn btn-primary" href="contact ">Go back</a>
+    <a class="btn btn-primary" href="form">Go back</a>
   </div>
 </div>
 
